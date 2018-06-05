@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Simple admin blog</title>
+    <link>http://inik.ml/</link>
+    <description>Recent content on Simple admin blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 17 Jan 2018 13:08:20 +0300</lastBuildDate>
+    
+	<atom:link href="http://inik.ml/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>docker-usefull-commands</title>
+      <link>http://inik.ml/posts/2018-01-17-docker-usefull-commands/</link>
+      <pubDate>Wed, 17 Jan 2018 13:08:20 +0300</pubDate>
+      
+      <guid>http://inik.ml/posts/2018-01-17-docker-usefull-commands/</guid>
+      <description>Базовые команды  Сборка образа Отладка Диски Сеть Управление контейнерами Управление Docker Machine   [⬆] Базовые команды: Запуск контейнера в фоне
+[~]$ docker run -d nginx  Запуск контейнера в интерактивном режиме с shell
+[~]$ docker run -it ubuntu bash  Запуск контейнера удаляющегося после установки
+[~]$ docker run -rm ubuntu bash  Экспорт порта контейнера
+[~]$ docker run -p 80:80 -d nginx  Задать имя контейнера</description>
+    </item>
+    
+    <item>
+      <title>ZFS</title>
+      <link>http://inik.ml/posts/2018-01-15-zfs/</link>
+      <pubDate>Mon, 15 Jan 2018 14:08:20 +0300</pubDate>
+      
+      <guid>http://inik.ml/posts/2018-01-15-zfs/</guid>
+      <description>Table of Contents  zfs-limits-without-reboot  [⬆] zfs-limits-without-reboot: So how do we check what is currently used.
+cat /proc/spl/kstat/zfs/arcstats |grep c_ c_min 4 8449671168 c_max 4 26843545600 arc_no_grow 4 0 arc_tempreserve 4 0 arc_loaned_bytes 4 0 arc_prune 4 0 arc_meta_used 4 10379141352 arc_meta_limit 4 20132659200 arc_dnode_limit 4 2013265920 arc_meta_max 4 17284110848 arc_meta_min 4 16777216 sync_wait_for_async 4 1521310 arc_need_free 4 0 arc_sys_free 4 4224835584  The values c_min and c_max are in bytes and you can use the Bit calculator to translate into something more readable.</description>
+    </item>
+    
+    <item>
+      <title>Linux System Administrator/DevOps Interview Questions</title>
+      <link>http://inik.ml/posts/2018-01-11-sysadmin-interview-questions/</link>
+      <pubDate>Thu, 11 Jan 2018 14:08:20 +0300</pubDate>
+      
+      <guid>http://inik.ml/posts/2018-01-11-sysadmin-interview-questions/</guid>
+      <description>Linux System Administrator/DevOps Interview Questions Table of Contents  General Questions Simple Linux Questions Medium Linux Questions Hard Linux Questions Expert Linux Questions Networking Questions MySQL Questions DevOps Questions Fun Questions Demo Time Other Great References  [⬆] General Questions:  What did you learn yesterday/this week? Talk about your preferred development/administration environment. (OS, Editor, Browsers, Tools etc.) Tell me about the last major Linux project you finished. Tell me about the biggest mistake you&amp;rsquo;ve made in [some recent time period] and how you would do it differently today.</description>
+    </item>
+    
+    <item>
+      <title>Megacli64 RAID10 creation example</title>
+      <link>http://inik.ml/posts/2017-12-07-create-raid10/</link>
+      <pubDate>Thu, 07 Dec 2017 12:08:20 +0300</pubDate>
+      
+      <guid>http://inik.ml/posts/2017-12-07-create-raid10/</guid>
+      <description>1.Command syntax
+MegaCli -CfgLdAdd -rX [E0:S0,E1:S1,...] [WT|WB] [NORA|RA] [Direct|Cached] [CachedBadBBU|NoCachedBadBBU] [-szXXX [-szYYY ...]] [-strpszM] [-Hsp[E0:S0,...]] [-AfterLdX] | [FDE|CtrlBased] [-Default| -Automatic| -None| -Maximum| -MaximumWithoutCaching] [-Cache] [-enblPI] [-Force]-aN  2.Get adapter ID (it&amp;rsquo;s 0 in the example below), Enclosure ID, Slot ID:
+MegaCli64 -PDList -aALL | egrep &#39;Adapter|Enclosure|Slot&#39;   Adapter #0 Enclosure Device ID: 252 Slot Number: 0 Enclosure position: N/A Enclosure Device ID: 252 Slot Number: 1 Enclosure position: N/A Enclosure Device ID: 252 Slot Number: 2 Enclosure position: N/A Enclosure Device ID: 252 Slot Number: 3 Enclosure position: N/A Enclosure Device ID: 252 Slot Number: 4 Enclosure position: N/A Enclosure Device ID: 252 Slot Number: 5 Enclosure position: N/A In above example, we get</description>
+    </item>
+    
+    <item>
+      <title>How to add disqus comments on your jekyll project</title>
+      <link>http://inik.ml/posts/2017-12-06-jekyll-disqus/</link>
+      <pubDate>Wed, 06 Dec 2017 14:08:20 +0300</pubDate>
+      
+      <guid>http://inik.ml/posts/2017-12-06-jekyll-disqus/</guid>
+      <description>Add disqus in your jekyll project  The first thing you need is register on https://disqus.com/
+ Add URL of your project to disqus here
+ Find disqus code here Don&amp;rsquo;t forgot change your-url to your.
+  Example:
+&amp;lt;div id=&amp;quot;disqus_thread&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; /** * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS. * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.</description>
+    </item>
+    
+    <item>
+      <title>Mysql replication</title>
+      <link>http://inik.ml/posts/2017-12-05-mysql-replication/</link>
+      <pubDate>Tue, 05 Dec 2017 11:08:20 +0300</pubDate>
+      
+      <guid>http://inik.ml/posts/2017-12-05-mysql-replication/</guid>
+      <description>Mysql replication Открываем в iptables порт 3306 на обоих серверах, можно открыть только для конкретного хоста.
+iptables -I INPUT -p tcp --dport 3306 -j ACCEPT  По умолчанию уже включены бинлоги, если же нет производим:
+На сервере, который будет выступать мастером, необходимо внести правки в my.cnf:
+# выбираем ID сервера, произвольное число, лучше начинать с 1 server-id = 1 # путь к бинарному логу log_bin = /var/log/mysql/mysql-bin.log # название Вашей базы данных, которая будет реплицироваться binlog_do_db = newdatabase  Перезапускаем Mysql:</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://inik.ml/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://inik.ml/about/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

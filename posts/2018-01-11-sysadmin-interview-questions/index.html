@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		
+		<meta name="description" content="Simple admin blog">
+		<meta name="generator" content="Hugo 0.40.1" />
+		<title>Linux System Administrator/DevOps Interview Questions &middot; Simple admin blog</title>
+		<link rel="shortcut icon" href="http://inik.ml/images/favicon.ico">
+		<link rel="stylesheet" href="http://inik.ml/css/style.css">
+		<link rel="stylesheet" href="http://inik.ml/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="http://inik.ml/css/font-awesome.min.css">
+		
+
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://inik.ml/'> <span class="arrow">←</span>Home</a>
+	
+	<a href='http://inik.ml/posts'>Archive</a>
+	<a href='http://inik.ml/tags'>Tags</a>
+	<a href='http://cv.inik.ml'>About me</a>
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Linux System Administrator/DevOps Interview Questions
+                    </h1>
+                    <h2 class="headline">
+                    Jan 11, 2018 14:08
+                    · 2140 words
+                    · 11 minute read
+                      <span class="tags">
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    
+
+<h1 id="linux-system-administrator-devops-interview-questions">Linux System Administrator/DevOps Interview Questions</h1>
+
+<h2 id="a-name-toc-table-of-contents-a"><a name='toc'>Table of Contents</a></h2>
+
+<ol>
+<li><a href="#general">General Questions</a></li>
+<li><a href="#simple">Simple Linux Questions</a></li>
+<li><a href="#medium">Medium Linux Questions</a></li>
+<li><a href="#hard">Hard Linux Questions</a></li>
+<li><a href="#expert">Expert Linux Questions</a></li>
+<li><a href="#network">Networking Questions</a></li>
+<li><a href="#mysql">MySQL Questions</a></li>
+<li><a href="#devop">DevOps Questions</a></li>
+<li><a href="#fun">Fun Questions</a></li>
+<li><a href="#demo">Demo Time</a></li>
+<li><a href="#references">Other Great References</a></li>
+</ol>
+
+<h4 id="toc-a-name-general-general-questions-a"><a href="#toc">[⬆]</a> <a name='general'>General Questions:</a></h4>
+
+<ul>
+<li>What did you learn yesterday/this week?</li>
+<li>Talk about your preferred development/administration environment. (OS, Editor, Browsers, Tools etc.)</li>
+<li>Tell me about the last major Linux project you finished.</li>
+<li>Tell me about the biggest mistake you&rsquo;ve made in [some recent time period] and how you would do it differently today. What did you learn from this experience?</li>
+<li>Why we must choose you?</li>
+<li>What function does DNS play on a network?</li>
+<li>What is HTTP?</li>
+<li>What is an HTTP proxy and how does it work?</li>
+<li>Describe briefly how HTTPS works.</li>
+<li>What is SMTP? Give the basic scenario of how a mail message is delivered via SMTP.</li>
+<li>What is RAID? What is RAID0, RAID1, RAID5, RAID10?</li>
+<li>What is a level 0 backup? What is an incremental backup?</li>
+<li>Describe the general file system hierarchy of a Linux system.</li>
+</ul>
+
+<h4 id="toc-a-name-simple-simple-linux-questions-a"><a href="#toc">[⬆]</a> <a name='simple'>Simple Linux Questions:</a></h4>
+
+<ul>
+<li>What is the name and the UID of the administrator user?</li>
+<li>How to list all files, including hidden ones, in a directory?</li>
+<li>What is the Unix/Linux command to remove a directory and its contents?</li>
+<li>Which command will show you free/used memory? Does free memory exist on Linux?</li>
+<li>How to search for the string &ldquo;my konfi is the best&rdquo; in files of a directory recursively?</li>
+<li>How to connect to a remote server or what is SSH?</li>
+<li>How to get all environment variables and how can you use them?</li>
+<li>I get &ldquo;command not found&rdquo; when I run <code>ifconfig -a</code>. What can be wrong?</li>
+<li>What happens if I type TAB-TAB?</li>
+<li>What command will show the available disk space on the Unix/Linux system?</li>
+<li>What commands do you know that can be used to check DNS records?</li>
+<li>What Unix/Linux commands will alter a files ownership, files permissions?</li>
+<li>What does <code>chmod +x FILENAME</code>do?</li>
+<li>What does the permission 0750 on a file mean?</li>
+<li>What does the permission 0750 on a directory mean?</li>
+<li>How to add a new system user without login permissions?</li>
+<li>How to add/remove a group from a user?</li>
+<li>What is a bash alias?</li>
+<li>How do you set the mail address of the root/a user?</li>
+<li>What does CTRL-c do?</li>
+<li>What is in /etc/services?</li>
+<li>How to redirect STDOUT and STDERR in bash? (&gt; /dev/null 2&gt;&amp;1)</li>
+<li>What is the difference between UNIX and Linux.</li>
+<li>What is the difference between Telnet and SSH?</li>
+<li>Explain the three load averages and what do they indicate. What command can be used to view the load averages?</li>
+<li>Can you name a lower-case letter that is not a valid option for GNU <code>ls</code>?</li>
+<li>What is a Linux kernel module?</li>
+<li>Walk me through the steps in booting into single user mode to troubleshoot a problem.</li>
+<li>Walk me through the steps you&rsquo;d take to troubleshoot a 404 error on a web application you administer.</li>
+</ul>
+
+<h4 id="toc-a-name-medium-medium-linux-questions-a"><a href="#toc">[⬆]</a> <a name='medium'>Medium Linux Questions:</a></h4>
+
+<ul>
+<li>What do the following commands do and how would you use them?
+
+<ul>
+<li><code>tee</code></li>
+<li><code>awk</code></li>
+<li><code>tr</code></li>
+<li><code>cut</code></li>
+<li><code>tac</code></li>
+<li><code>curl</code></li>
+<li><code>wget</code></li>
+<li><code>watch</code></li>
+<li><code>head</code></li>
+<li><code>tail</code></li>
+</ul></li>
+<li>What does an <code>&amp;</code> after a command do?</li>
+<li>What does <code>&amp; disown</code> after a command do?</li>
+<li>What is a packet filter and how does it work?</li>
+<li>What is Virtual Memory?</li>
+<li>What is swap and what is it used for?</li>
+<li>What is an A record, an NS record, a PTR record, a CNAME record, an MX record?</li>
+<li>Are there any other RRs and what are they used for?</li>
+<li>What is a Split-Horizon DNS?</li>
+<li>What is the sticky bit?</li>
+<li>What does the immutable bit do to a file?</li>
+<li>What is the difference between hardlinks and symlinks? What happens when you remove the source to a symlink/hardlink?</li>
+<li>What is an inode and what fields are stored in an inode?</li>
+<li>How to force/trigger a file system check on next reboot?</li>
+<li>What is SNMP and what is it used for?</li>
+<li>What is a runlevel and how to get the current runlevel?</li>
+<li>What is SSH port forwarding?</li>
+<li>What is the difference between local and remote port forwarding?</li>
+<li>What are the steps to add a user to a system without using useradd/adduser?</li>
+<li>What is MAJOR and MINOR numbers of special files?</li>
+<li>Describe the mknod command and when you&rsquo;d use it.</li>
+<li>Describe a scenario when you get a &ldquo;filesystem is full&rdquo; error, but &lsquo;df&rsquo; shows there is free space.</li>
+<li>Describe a scenario when deleting a file, but &lsquo;df&rsquo; not showing the space being freed.</li>
+<li>Describe how &lsquo;ps&rsquo; works.</li>
+<li>What happens to a child process that dies and has no parent process to wait for it and what’s bad about this?</li>
+<li>Explain briefly each one of the process states.</li>
+<li>How to know which process listens on a specific port?</li>
+<li>What is a zombie process and what could be the cause of it?</li>
+<li>You run a bash script and you want to see its output on your terminal and save it to a file at the same time. How could you do it?</li>
+<li>Explain what echo &ldquo;1&rdquo; &gt; /proc/sys/net/ipv4/ip_forward does.</li>
+<li>Describe briefly the steps you need to take in order to create and install a valid certificate for the site <a href="https://foo.example.com">https://foo.example.com</a>.</li>
+<li>Can you have several HTTPS virtual hosts sharing the same IP?</li>
+<li>What is a wildcard certificate?</li>
+<li>Which Linux file types do you know?</li>
+<li>What is the difference between a process and a thread? And parent and child processes after a fork system call?</li>
+<li>What is the difference between exec and fork?</li>
+<li>What is &ldquo;nohup&rdquo; used for?</li>
+<li>What is the difference between these two commands?
+
+<ul>
+<li><code>myvar=hello</code></li>
+<li><code>export myvar=hello</code></li>
+</ul></li>
+<li>How many NTP servers would you configure in your local ntp.conf?</li>
+<li>What does the column &lsquo;reach&rsquo; mean in <code>ntpq -p</code> output?</li>
+<li>You need to upgrade kernel at 100-1000 servers, how you would do this?</li>
+<li>How can you get Host, Channel, ID, LUN of SCSI disk?</li>
+<li>How can you limit process memory usage?</li>
+<li>What is bash quick substitution/caret replace(^x^y)?</li>
+<li>Do you know of any alternative shells? If so, have you used any?</li>
+<li>What is a tarpipe (or, how would you go about copying everything, including hardlinks and special files, from one server to another)?</li>
+<li>How can you tell if the httpd package was already installed?</li>
+<li>How can you list the contents of a package?</li>
+<li>How can you determine which package is better: openssh-server-5.3p1-118.1.el6_8.x86_64 or openssh-server-6.6p1-1.el6.x86_64 ?</li>
+<li>Can you explain to me the difference between block based, and object based storage?</li>
+</ul>
+
+<h4 id="toc-a-name-hard-hard-linux-questions-a"><a href="#toc">[⬆]</a> <a name='hard'>Hard Linux Questions:</a></h4>
+
+<ul>
+<li>What is a tunnel and how you can bypass a http proxy?</li>
+<li>What is the difference between IDS and IPS?</li>
+<li>What shortcuts do you use on a regular basis?</li>
+<li>What is the Linux Standard Base?</li>
+<li>What is an atomic operation?</li>
+<li>Your freshly configured http server is not running after a restart, what can you do?</li>
+<li>What kind of keys are in ~/.ssh/authorized_keys and what it is this file used for?</li>
+<li>I&rsquo;ve added my public ssh key into authorized_keys but I&rsquo;m still getting a password prompt, what can be wrong?</li>
+<li>Did you ever create RPM&rsquo;s, DEB&rsquo;s or solaris pkg&rsquo;s?</li>
+<li>What does <code>:(){ :|:&amp; };:</code> do on your system?</li>
+<li>How do you catch a Linux signal on a script?</li>
+<li>Can you catch a SIGKILL?</li>
+<li>What&rsquo;s happening when the Linux kernel is starting the OOM killer and how does it choose which process to kill first?</li>
+<li>Describe the linux boot process with as much detail as possible, starting from when the system is powered on and ending when you get a prompt.</li>
+<li>What&rsquo;s a chroot jail?</li>
+<li>When trying to umount a directory it says it&rsquo;s busy, how to find out which PID holds the directory?</li>
+<li>What&rsquo;s LD_PRELOAD and when it&rsquo;s used?</li>
+<li>You ran a binary and nothing happened. How would you debug this?</li>
+<li>What are cgroups? Can you specify a scenario where you could use them?</li>
+<li>How can you remove/delete a file with file-name consisting of only non-printable/non-type-able characters?</li>
+<li>How can you increase or decrease the priority of a process in Linux?</li>
+<li>What are run-levels in Linux?</li>
+</ul>
+
+<h4 id="toc-a-name-expert-expert-linux-questions-a"><a href="#toc">[⬆]</a> <a name='expert'>Expert Linux Questions:</a></h4>
+
+<ul>
+<li>A running process gets <code>EAGAIN: Resource temporarily unavailable</code> on reading a socket. How can you close this bad socket/file descriptor without killing the process?</li>
+</ul>
+
+<h4 id="toc-a-name-network-networking-questions-a"><a href="#toc">[⬆]</a> <a name='network'>Networking Questions:</a></h4>
+
+<ul>
+<li>What is localhost and why would <code>ping localhost</code> fail?</li>
+<li>What is the similarity between &ldquo;ping&rdquo; &amp; &ldquo;traceroute&rdquo; ? How is traceroute able to find the hops.</li>
+<li>What is the command used to show all open ports and/or socket connections on a machine?</li>
+<li>Is 300.168.0.123 a valid IPv4 address?</li>
+<li>Which IP ranges/subnets are &ldquo;private&rdquo; or &ldquo;non-routable&rdquo; (RFC 1918)?</li>
+<li>What is a VLAN?</li>
+<li>What is ARP and what is it used for?</li>
+<li>What is the difference between TCP and UDP?</li>
+<li>What is the purpose of a default gateway?</li>
+<li>What is command used to show the routing table on a Linux box?</li>
+<li>A TCP connection on a network can be uniquely defined by 4 things. What are those things?</li>
+<li>When a client running a web browser connects to a web server, what is the source port and what is the destination port of the connection?</li>
+<li>How do you add an IPv6 address to a specific interface?</li>
+<li>You have added an IPv4 and IPv6 address to interface eth0. A ping to the v4 address is working but a ping to the v6 address gives yout the response <code>sendmsg: operation not permitted</code>. What could be wrong?</li>
+<li>What is SNAT and when should it be used?</li>
+<li>Explain how could you ssh login into a Linux system that DROPs all new incoming packets using a SSH tunnel.</li>
+<li>How do you stop a DDoS attack?</li>
+<li>How can you see content of an ip packet?</li>
+<li>What is IPoAC (RFC 1149)?</li>
+</ul>
+
+<h4 id="toc-a-name-mysql-mysql-questions-a"><a href="#toc">[⬆]</a> <a name='mysql'>MySQL questions:</a></h4>
+
+<ul>
+<li>How do you create a user?</li>
+<li>How do you provide privileges to a user?</li>
+<li>What is the difference between a &ldquo;left&rdquo; and a &ldquo;right&rdquo; join?</li>
+<li>Explain briefly the differences between InnoDB and MyISAM.</li>
+<li>Describe briefly the steps you need to follow in order to create a simple master/slave cluster.</li>
+<li>Why should you run &ldquo;mysql_secure_installation&rdquo; after installing MySQL?</li>
+<li>How do you check which jobs are running?</li>
+<li>How would you take a backup of a MySQL database?</li>
+</ul>
+
+<h4 id="toc-a-name-devop-devops-questions-a"><a href="#toc">[⬆]</a> <a name='devop'>DevOps Questions:</a></h4>
+
+<ul>
+<li>Can you describe your workflow when you create a script?</li>
+<li>What is GIT?</li>
+<li>What is a dynamically/statically linked file?</li>
+<li>What does &ldquo;./configure &amp;&amp; make &amp;&amp; make install&rdquo; do?</li>
+<li>What is puppet/chef/ansible used for?</li>
+<li>What is Nagios/Zenoss/NewRelic used for?</li>
+<li>What is Jenkins/TeamCity/GoCI used for?</li>
+<li>What is the difference between Containers and VMs?</li>
+<li>How do you create a new postgres user?</li>
+<li>What is a virtual IP address? What is a cluster?</li>
+<li>How do you print all strings of printable characters present in a file?</li>
+<li>How do you find shared library dependencies?</li>
+<li>What is Automake and Autoconf?</li>
+<li>./configure shows an error that libfoobar is missing on your system, how could you fix this, what could be wrong?</li>
+<li>What are the advantages/disadvantages of script vs compiled program?</li>
+<li>What&rsquo;s the relationship between continuous delivery and DevOps?</li>
+<li>What are the important aspects of a system of continuous integration and deployment?</li>
+<li>How would you enable network file sharing within AWS that would allow EC2 instances in multiple availability zones to share data?</li>
+</ul>
+
+<h4 id="toc-a-name-fun-fun-questions-a"><a href="#toc">[⬆]</a> <a name='fun'>Fun Questions:</a></h4>
+
+<ul>
+<li>A careless sysadmin executes the following command: <code>chmod 444 /bin/chmod</code> - what do you do to fix this?</li>
+<li>I&rsquo;ve lost my root password, what can I do?</li>
+<li>I&rsquo;ve rebooted a remote server but after 10 minutes I&rsquo;m still not able to ssh into it, what can be wrong?</li>
+<li>If you were stuck on a desert island with only 5 command-line utilities, which would you choose?</li>
+<li>You come across a random computer and it appears to be a command console for the universe. What is the first thing you type?</li>
+<li>Tell me about a creative way that you&rsquo;ve used SSH?</li>
+<li>You have deleted by error a running script, what could you do to restore it?</li>
+<li>What will happen on 19 January 2038?</li>
+<li>How to reboot server when reboot command is not responding?</li>
+</ul>
+
+<h4 id="toc-a-name-demo-demo-time-a"><a href="#toc">[⬆]</a> <a name='demo'>Demo Time:</a></h4>
+
+<ul>
+<li>Unpack test.tar.gz without man pages or google.</li>
+<li>Remove all &ldquo;*.pyc&rdquo; files from testdir recursively?</li>
+<li>Search for &ldquo;my konfu is the best&rdquo; in all *.py files.</li>
+<li>Replace the occurrence of &ldquo;my konfu is the best&rdquo; with &ldquo;I&rsquo;m a linux jedi master&rdquo; in all *.txt files.</li>
+<li>Test if port 443 on a machine with IP address X.X.X.X is reachable.</li>
+<li>Get <a href="http://myinternal.webserver.local/test.html">http://myinternal.webserver.local/test.html</a> via telnet.</li>
+<li>How to send an email without a mail client, just on the command line?</li>
+<li>Write a <code>get_prim</code> method in python/perl/bash/pseudo.</li>
+<li>Find all files which have been accessed within the last 30 days.</li>
+<li>Explain the following command <code>(date ; ps -ef | awk '{print $1}' | sort | uniq | wc -l ) &gt;&gt; Activity.log</code></li>
+<li>Write a script to list all the differences between two directories.</li>
+<li>In a log file with contents as <code>&lt;TIME&gt; : [MESSAGE] : [ERROR_NO] - Human readable text</code> display summary/count of specific error numbers that occurred every hour or a specific hour.</li>
+</ul>
+
+<h4 id="toc-a-name-references-other-great-references-a"><a href="#toc">[⬆]</a> <a name='references'>Other Great References:</a></h4>
+
+<p>Some questions are &lsquo;borrowed&rsquo; from other great references like:</p>
+
+<ul>
+<li><a href="https://github.com/darcyclarke/Front-end-Developer-Interview-Questions">https://github.com/darcyclarke/Front-end-Developer-Interview-Questions</a></li>
+<li><a href="https://github.com/kylejohnson/linux-sysadmin-interview-questions/blob/master/test.md">https://github.com/kylejohnson/linux-sysadmin-interview-questions/blob/master/test.md</a></li>
+<li><a href="http://slideshare.net/kavyasri790693/linux-admin-interview-questions">http://slideshare.net/kavyasri790693/linux-admin-interview-questions</a></li>
+</ul>
+
+                </section>
+            </article>
+
+            
+
+            
+                <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'blog-inik-ml'; 
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+            
+
+            
+                <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+
+    
+    
+    
+        <li>
+            <a href="/posts/2018-01-17-docker-usefull-commands/">Docker usefull commands<aside class="dates">Jan 17 2018</aside></a>
+        </li>
+    
+        <li>
+            <a href="/posts/2018-01-15-zfs/">ZFS<aside class="dates">Jan 15 2018</aside></a>
+        </li>
+    
+        <li>
+            <a href="/posts/2017-12-07-create-raid10/">Megacli64 RAID10 creation example<aside class="dates">Dec 7 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/posts/2017-12-06-jekyll-disqus/">How to add disqus comments on your jekyll project<aside class="dates">Dec 6 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/posts/2017-12-05-mysql-replication/">Mysql replication<aside class="dates">Dec 5 2017</aside></a>
+        </li>
+    
+</ul>
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.facebook.com/nikonorov.iu?ref=bookmarks">
+        <i class="fa fa-facebook-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://github.com/nikonorovi">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2018 <i class="fa fa-heart" aria-hidden="true"></i> 
+    
+    </p>
+    <p class="small">
+    Created by <a href="http://cv.inik.ml/">Nikonorov Igor</a> based on <a href="http://www.gohugo.io/">Hugo</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="http://inik.ml/js/jquery-3.3.1.min.js"></script>
+<script src="http://inik.ml/js/main.js"></script>
+<script src="http://inik.ml/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

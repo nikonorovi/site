@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		
+		<meta name="description" content="Simple admin blog">
+		<meta name="generator" content="Hugo 0.40.1" />
+		<title>docker-usefull-commands &middot; Simple admin blog</title>
+		<link rel="shortcut icon" href="http://inik.ml/images/favicon.ico">
+		<link rel="stylesheet" href="http://inik.ml/css/style.css">
+		<link rel="stylesheet" href="http://inik.ml/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="http://inik.ml/css/font-awesome.min.css">
+		
+
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://inik.ml/'> <span class="arrow">←</span>Home</a>
+	
+	<a href='http://inik.ml/posts'>Archive</a>
+	<a href='http://inik.ml/tags'>Tags</a>
+	<a href='http://cv.inik.ml'>About me</a>
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        docker-usefull-commands
+                    </h1>
+                    <h2 class="headline">
+                    Jan 17, 2018 13:08
+                    · 347 words
+                    · 2 minute read
+                      <span class="tags">
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    
+
+<ol>
+<li><a href="#base">Базовые команды</a>
+
+<ol>
+<li><a href="#build">Сборка образа</a></li>
+<li><a href="#debug">Отладка</a></li>
+<li><a href="#disks">Диски</a></li>
+<li><a href="#network">Сеть</a></li>
+<li><a href="#management">Управление контейнерами</a></li>
+<li><a href="#docker-machine">Управление Docker Machine</a></li>
+</ol></li>
+</ol>
+
+<h4 id="toc-a-name-base-базовые-команды-a"><a href="#toc">[⬆]</a> <a name='base'>Базовые команды:</a></h4>
+
+<p>Запуск контейнера в фоне</p>
+
+<pre><code>[~]$ docker run -d nginx
+</code></pre>
+
+<p>Запуск контейнера в интерактивном режиме с shell</p>
+
+<pre><code>[~]$ docker run -it ubuntu bash
+</code></pre>
+
+<p>Запуск контейнера удаляющегося после установки</p>
+
+<pre><code>[~]$ docker run -rm ubuntu bash
+</code></pre>
+
+<p>Экспорт порта контейнера</p>
+
+<pre><code>[~]$ docker run -p 80:80 -d nginx
+</code></pre>
+
+<p>Задать имя контейнера</p>
+
+<pre><code>[~]$ docker run --name frontend nginx
+</code></pre>
+
+<p>Запустить остановленный контейнер</p>
+
+<pre><code>[~]$ docker start frontend
+</code></pre>
+
+<p>Остановить контейнер</p>
+
+<pre><code>[~]$ docker stop frontend
+</code></pre>
+
+<h4 id="toc-a-name-build-сборка-образа-a"><a href="#toc">[⬆]</a> <a name='build'>Сборка образа:</a></h4>
+
+<p>На основе Dockerfile в текущей директории</p>
+
+<pre><code>[~]$ docker build --tag my-image .
+</code></pre>
+
+<p>Жесткая перезборка</p>
+
+<pre><code>[~]$ docker build --no-cache my-image .
+</code></pre>
+
+<p>Преобразовать контейнер в образ</p>
+
+<pre><code>[~]$ docker commit c31337 my-image
+</code></pre>
+
+<p>Удалить все неиспользуемые образы</p>
+
+<pre><code>[~]$ docker rmi $(docker images -q -f &quot;dangling=true&quot;)
+</code></pre>
+
+<h4 id="toc-a-name-debug-отладка-a"><a href="#toc">[⬆]</a> <a name='debug'>Отладка:</a></h4>
+
+<p>Зайти в работающий контейнер</p>
+
+<pre><code>[~]$ docker exec -ti c31337 bash
+</code></pre>
+
+<p>Просмотр логов запущеного контейнера</p>
+
+<pre><code>[~]$ docker logs -f c31337
+</code></pre>
+
+<p>Показать экспортированные порты</p>
+
+<pre><code>[~]$ docker port c31337
+</code></pre>
+
+<h4 id="toc-a-name-disks-диски-a"><a href="#toc">[⬆]</a> <a name='disks'>Диски:</a></h4>
+
+<p>Создать локальный диск</p>
+
+<pre><code>[~]$ docker volume create --name my-volume
+</code></pre>
+
+<p>Монтирование диска при старте контейнера</p>
+
+<pre><code>[~]$ docker run -v my-volume:/data nginx
+</code></pre>
+
+<p>Удалить диск</p>
+
+<pre><code>[~]$ docker volume rm my-volume
+</code></pre>
+
+<p>Показать все созданные диски</p>
+
+<pre><code>[~]$ docker volume ls
+</code></pre>
+
+<h4 id="toc-a-name-network-сеть-a"><a href="#toc">[⬆]</a> <a name='network'>Сеть:</a></h4>
+
+<p>Создать локальную сеть</p>
+
+<pre><code>[~]$ docker network create my-net
+</code></pre>
+
+<p>Подключить контейнер к сети при старте</p>
+
+<pre><code>[~]$ docker run -d --net my-net nginx
+</code></pre>
+
+<p>Подключить работающий контейнер к сети</p>
+
+<pre><code>[~]$ docker network connect my-net c31337
+</code></pre>
+
+<p>Отключить работающий контейнер от сети</p>
+
+<pre><code>[~]$ docker network disconnect my-net c31337
+</code></pre>
+
+<h4 id="toc-a-name-management-управление-контейнерами-a"><a href="#toc">[⬆]</a> <a name='management'>Управление контейнерами:</a></h4>
+
+<p>Показать работающие контейнеры</p>
+
+<pre><code>[~]$ docker ps
+</code></pre>
+
+<p>Показать все контейнеры</p>
+
+<pre><code>[~]$ docker ps -a
+</code></pre>
+
+<p>Показать метаданные контейнера</p>
+
+<pre><code>[~]$ docker inspect c31337
+</code></pre>
+
+<p>Показать доступные локально образы</p>
+
+<pre><code>[~]$ docker images
+</code></pre>
+
+<p>Удалить все остановленные контейнеры</p>
+
+<pre><code>[~]$ docker rm $(docker ps --filter status=expired -q)
+</code></pre>
+
+<p>Показать все контейнеры со специальной меткой</p>
+
+<pre><code>[~]$ docker ps --filter label=traefik.backend
+</code></pre>
+
+<p>Показать конкретные метаданные контейнера</p>
+
+<pre><code>docker inspect -f &quot;\{\{ .NetworkSettings.IPAddress \}\}&quot; c31337
+</code></pre>
+
+<p>Запустить ничего не делающий контейнер</p>
+
+<pre><code>[~]$ docker run -d busybox /bin/sh -c &quot;while true; do sleep 2; done&quot;
+</code></pre>
+
+<h4 id="toc-a-name-docker-machine-управление-docker-machine-a"><a href="#toc">[⬆]</a> <a name='docker-machine'>Управление Docker Machine:</a></h4>
+
+<p>Запустить Docker Machine</p>
+
+<pre><code>[~]$ docker-machine start machine_name
+</code></pre>
+
+<p>Остановить Docker Machine</p>
+
+<pre><code>[~]$ docker-machine stop machine_name
+</code></pre>
+
+<p>Настроить Docker на работу с удаленной Docker Machine</p>
+
+<pre><code>[~]$ eval &quot;$(docker-machine env machine_name)&quot;
+</code></pre>
+
+                </section>
+            </article>
+
+            
+
+            
+                <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'blog-inik-ml'; 
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+            
+
+            
+                <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+
+    
+    
+    
+        <li>
+            <a href="/posts/2018-01-15-zfs/">ZFS<aside class="dates">Jan 15 2018</aside></a>
+        </li>
+    
+        <li>
+            <a href="/posts/2018-01-11-sysadmin-interview-questions/">Linux System Administrator/DevOps Interview Questions<aside class="dates">Jan 11 2018</aside></a>
+        </li>
+    
+        <li>
+            <a href="/posts/2017-12-07-create-raid10/">Megacli64 RAID10 creation example<aside class="dates">Dec 7 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/posts/2017-12-06-jekyll-disqus/">How to add disqus comments on your jekyll project<aside class="dates">Dec 6 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/posts/2017-12-05-mysql-replication/">Mysql replication<aside class="dates">Dec 5 2017</aside></a>
+        </li>
+    
+</ul>
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.facebook.com/nikonorov.iu?ref=bookmarks">
+        <i class="fa fa-facebook-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://github.com/nikonorovi">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2018 <i class="fa fa-heart" aria-hidden="true"></i> 
+    
+    </p>
+    <p class="small">
+    Created by <a href="http://cv.inik.ml/">Nikonorov Igor</a> based on <a href="http://www.gohugo.io/">Hugo</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="http://inik.ml/js/jquery-3.3.1.min.js"></script>
+<script src="http://inik.ml/js/main.js"></script>
+<script src="http://inik.ml/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>

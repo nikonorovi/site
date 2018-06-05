@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		
+		<meta name="description" content="Simple admin blog">
+		<meta name="generator" content="Hugo 0.40.1" />
+		<title>Mysql replication &middot; Simple admin blog</title>
+		<link rel="shortcut icon" href="http://inik.ml/images/favicon.ico">
+		<link rel="stylesheet" href="http://inik.ml/css/style.css">
+		<link rel="stylesheet" href="http://inik.ml/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="http://inik.ml/css/font-awesome.min.css">
+		
+
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='http://inik.ml/'> <span class="arrow">←</span>Home</a>
+	
+	<a href='http://inik.ml/posts'>Archive</a>
+	<a href='http://inik.ml/tags'>Tags</a>
+	<a href='http://cv.inik.ml'>About me</a>
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Mysql replication
+                    </h1>
+                    <h2 class="headline">
+                    Dec 5, 2017 11:08
+                    · 186 words
+                    · 1 minute read
+                      <span class="tags">
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    
+
+<h2 id="mysql-replication">Mysql replication</h2>
+
+<p>Открываем в iptables порт 3306 на обоих серверах, можно открыть только для конкретного хоста.</p>
+
+<pre><code>iptables -I INPUT -p tcp --dport 3306 -j ACCEPT
+</code></pre>
+
+<p>По умолчанию уже включены бинлоги, если же нет производим:</p>
+
+<p>На сервере, который будет выступать мастером, необходимо внести правки в my.cnf:</p>
+
+<pre><code># выбираем ID сервера, произвольное число, лучше начинать с 1
+server-id = 1
+# путь к бинарному логу
+log_bin = /var/log/mysql/mysql-bin.log
+# название Вашей базы данных, которая будет реплицироваться
+binlog_do_db = newdatabase
+</code></pre>
+
+<p>Перезапускаем Mysql:</p>
+
+<p>Далее выполняем на мастере:</p>
+
+<pre><code>master# slave IP (hiper ip) 
+GRANT replication slave ON *.* TO &quot;repluser&quot; @ &quot;IP SLAVE&quot; IDENTIFIED BY &quot;aeTho0Iecah8&quot;; 
+FLUSH PRIVILEGES; 
+show master status;
+</code></pre>
+
+<p>Далее блокируем все таблицы в нашей базе данных:</p>
+
+<pre><code>USE newdatabase; 
+FLUSH TABLES WITH READ LOCK; 
+show master status; 
+</code></pre>
+
+<p>Теперь необходимо сделать дамп базы данных:</p>
+
+<pre><code>mysqldump -u root -p newdatabase &gt; newdatabase.sql
+</code></pre>
+
+<p>Разблокируем таблицы в консоли mysql:</p>
+
+<pre><code> UNLOCK TABLES;
+</code></pre>
+
+<p>На слейве выполняем</p>
+
+<pre><code>CHANGE MASTER TO MASTER_HOST = &quot;IP MASTER&quot;, MASTER_USER = &quot;repluser&quot;, MASTER_PASSWORD = &quot;aeTho0Iecah8&quot;, MASTER_LOG_FILE = &quot;mariadb-bin.000002&quot;, MASTER_LOG_POS = 982, MASTER_SSL=1, MASTER_SSL_CA = '/etc/mysql/newcerts/ca-cert.pem', MASTER_SSL_CERT = '/etc/mysql/newcerts/client-cert.pem', MASTER_SSL_KEY = '/etc/mysql/newcerts/client-key.pem';
+FLUSH PRIVILEGES;
+SLAVE START;
+show slave status \G
+</code></pre>
+
+<p>Реплика готова.</p>
+
+                </section>
+            </article>
+
+            
+
+            
+                <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'blog-inik-ml'; 
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+            
+
+            
+                <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+
+    
+    
+    
+        <li>
+            <a href="/posts/2018-01-17-docker-usefull-commands/">Docker usefull commands<aside class="dates">Jan 17 2018</aside></a>
+        </li>
+    
+        <li>
+            <a href="/posts/2018-01-15-zfs/">ZFS<aside class="dates">Jan 15 2018</aside></a>
+        </li>
+    
+        <li>
+            <a href="/posts/2018-01-11-sysadmin-interview-questions/">Linux System Administrator/DevOps Interview Questions<aside class="dates">Jan 11 2018</aside></a>
+        </li>
+    
+        <li>
+            <a href="/posts/2017-12-07-create-raid10/">Megacli64 RAID10 creation example<aside class="dates">Dec 7 2017</aside></a>
+        </li>
+    
+        <li>
+            <a href="/posts/2017-12-06-jekyll-disqus/">How to add disqus comments on your jekyll project<aside class="dates">Dec 6 2017</aside></a>
+        </li>
+    
+</ul>
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.facebook.com/nikonorov.iu?ref=bookmarks">
+        <i class="fa fa-facebook-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://github.com/nikonorovi">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2018 <i class="fa fa-heart" aria-hidden="true"></i> 
+    
+    </p>
+    <p class="small">
+    Created by <a href="http://cv.inik.ml/">Nikonorov Igor</a> based on <a href="http://www.gohugo.io/">Hugo</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="http://inik.ml/js/jquery-3.3.1.min.js"></script>
+<script src="http://inik.ml/js/main.js"></script>
+<script src="http://inik.ml/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>
